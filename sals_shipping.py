@@ -90,8 +90,31 @@ method_selector()
 
 
 # %%
+weight_range = list(range(1, 26))
+ground_shipping_pxs = []
+premium_ground_shipping_pxs = []
+drone_shipping_pxs = []
 
+for weight in weight_range:
+    ground_shipping_pxs.append(ground_shipping(weight))
+    premium_ground_shipping_pxs.append(premium_ground_shipping(weight))
+    drone_shipping_pxs.append(drone_shipping(weight))
 
+df = pd.DataFrame()
+df["Weight"] = weight_range
+df["Ground Shipping Prices"] = ground_shipping_pxs
+df["Premium Ground Shipping Prices"] = premium_ground_shipping_pxs
+df["Drone Shipping Prices"] = drone_shipping_pxs
 
+plt.plot(df["Weight"], df["Ground Shipping Prices"])
+plt.plot(df["Weight"], df["Premium Ground Shipping Prices"])
+plt.plot(df["Weight"], df["Drone Shipping Prices"])
+plt.legend(["Ground Shipping Prices", "Premium Ground Shipping Prices", \
+            "Drone Shipping Prices"],loc=2)
+plt.style.use('seaborn-notebook')
+plt.xlabel('Weight')
+plt.ylabel('Price')
+plt.title("Sal's Shipping: Comparing Shipping Methods, Weight vs Price")
+plt.show()
 
 
