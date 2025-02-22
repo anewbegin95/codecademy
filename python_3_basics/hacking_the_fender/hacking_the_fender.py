@@ -65,3 +65,32 @@ with open(boss_message_path, 'w') as boss_message:
     }
     # Write out boss_message_dict to boss_message using json.dump().
     json.dump(boss_message_dict, boss_message)
+
+#  3. Scrambling the Password
+# Enemy of the people, Slash Null, is who we want The Fender to think was behind this attack. He has a signature, whenever he
+# hacks someone he adds this signature to one of the files he touches. Save the sig. to the variable slash_null_sig.
+slash_null_sig = """
+ _  _     ___   __  ____             
+/ )( \   / __) /  \(_  _)            
+) \/ (  ( (_ \(  O ) )(              
+\____/   \___/ \__/ (__)             
+ _  _   __    ___  __ _  ____  ____  
+/ )( \ / _\  / __)(  / )(  __)(    \ 
+) __ (/    \( (__  )  (  ) _)  ) D ( 
+\_)(_/\_/\_/ \___)(__\_)(____)(____/ 
+        ____  __     __   ____  _  _ 
+ ___   / ___)(  )   / _\ / ___)/ )( \
+(___)  \___ \/ (_/\/    \\___ \) __ (
+       (____/\____/\_/\_/(____/\_)(_/
+ __ _  _  _  __    __                
+(  ( \/ )( \(  )  (  )               
+/    /) \/ (/ (_/\/ (_/\             
+\_)__)\____/\____/\____/
+"""
+
+# Now that we’ve safely recovered the compromised users we’ll want to remove the "passwords.csv" file completely.
+# Create a new with block and open "new_passwords.csv" in write-mode. Save the file object to a variable called new_passwords_obj.
+new_passwords_path = 'python_3_basics/hacking_the_fender/new_passwords.csv'
+
+with open(new_passwords_path, 'w') as new_passwords_obj:
+    new_passwords_obj.write(slash_null_sig)
