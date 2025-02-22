@@ -13,7 +13,7 @@ programming.
 If you get stuck during this project, check out the project walkthrough video which can be found in the help menu.
 """
 
-# Reading In The Passwords
+# 1. Reading In The Passwords
 
 # First import the CSV module, since we’ll be needing it to parse the data.
 import csv
@@ -38,12 +38,30 @@ with open(password_path) as password_file:
         # compromised_users instead of printing them.
         compromised_users.append(password_row['Username'])
 
-print(compromised_users)
-
 # Inside the new context-managed block opened by the with statement start a new for loop. Iterate over each of your compromised_users.
 compromised_users_path = 'python_3_basics/hacking_the_fender/compromised_users.txt'
 
 # Write the username of each compromised_user in compromised_users to compromised_user_file.
 with open(compromised_users_path, 'w') as compromised_user_file:
     for compromised_user in compromised_users:
-        compromised_user_file.write(compromised_user)
+        compromised_user_file.write(compromised_user + '\n')
+
+# 2. Notifying the Boss
+# Your boss needs to know that you were successful in retrieving that compromised data. We’ll need to send him an encoded 
+# message over the internet. Let’s use JSON to do that.
+
+# First we’ll need to import the json module.
+import json
+
+# Open a new JSON file in write-mode called boss_message.json. Save the file object to the variable boss_message.
+boss_message_path = 'python_3_basics/hacking_the_fender/boss_message.json'
+
+with open(boss_message_path, 'w') as boss_message:
+    # Create a Python dictionary object within your with statement that relays a boss message. Call this boss_message_dict.
+    # Give it a "recipient" key with a value "The Boss". Also give it a "message" key with the value "Mission Success".
+    boss_message_dict = {
+        'recipient': 'The Boss'
+        , 'message': 'Mission Success'
+    }
+    # Write out boss_message_dict to boss_message using json.dump().
+    json.dump(boss_message_dict, boss_message)
