@@ -15,7 +15,57 @@
       <h1>Complete the Form -<br> Complete the Story!</h1>
       <hr>
       <!--Add your form below:-->
-      
+      <form action="story.html" method="GET">
+        <label for="animal-1">Animal:</label>
+        <input id="animal-1" name="animal-1" type="text" required>
+        <br>
+        <label for="animal-2">Another animal:</label>
+        <input id="animal-2" name="animal-2" type="text" required>
+        <br>
+        <label for="animal-3">One more animal:</label>
+        <input id="animal-3" name="animal-3" type="text" required>
+        <br>
+        <label for="adj-1">Adjective (ending in "-ed"):</label>
+        <input id="adj-1" name="adj-1" type="text" required>
+        <br>
+        <label for="verb-1">Verb (ending in "-ing"):</label>
+        <input id="verb-1" name="verb-1" type="text" required>
+        <br>
+        <label for="num-1">Number:</label>
+        <input id="num-1" name="num-1" type="number" required>
+        <br>
+        <span>Yes or No:</span>
+        <br>
+        Yes <input id = "yes" name = "answer" type = "radio" value = "yes" required>
+        No <input id = "no" name = "answer" type = "radio" value = "no" required>
+        <br>
+        <label for="num-1">Number:</label>
+        <input id = "num-1" name = "num-1" type = "number" required>
+        <br>
+        <label for="speed">Relative speed (ends in -er):</label>
+        <select id="speed" name="speed" Required>
+          <option value="slower">Slower</option>
+          <option value="faster">Faster</option>
+        </select>
+        <br>
+        <label for="quote">Motivational Quote:</label>
+        <input id="quote" name="quote" type="text" required list="quote-choices">
+        <datalist id="quote-choices">
+          <option value="Winner gets ice cream!"></option>
+          <option value="Skill issue."></option>
+          <option value="Eat shit, you filthy casual."></option>
+          <option value="Eat shit, you fucking casual."></option>
+          <option value="Eat shit, you filty fucking casual."></option>
+          <option value="Mad 'cause bad."></option>
+        </datalist>
+        <br>
+        <label for="message">Meaningful message:</label>
+        <br>
+        <textarea id="message" name="message" required rows="8" cols="40">
+        </textarea>
+        <br>
+        <input type="submit" value="Form my story!">
+      </form>
     </section>
   </body>
 </html>

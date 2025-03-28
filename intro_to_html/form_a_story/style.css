@@ -5,7 +5,13 @@ body {
   
   form {
     line-height: 27px;
-  }
+}
+
+form input[type="text"], 
+form input[type="number"], 
+form input[type="radio"] {
+    text-align: right;
+}
   
   h2 {
     font-size: 20px;
